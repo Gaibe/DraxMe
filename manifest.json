@@ -1,0 +1,25 @@
+{
+"manifest_version" : 2,
+
+"name" : "DraxMe",
+"version" : "0.1",
+"description" : "Google Chrome extension allowing to takes note easily",
+
+"browser_action" :
+	{
+		"default_icon" : "images/icone48.png",
+		"default_popup" : "interface.html"
+	},
+	
+"icons" :
+	{
+		"16" : "images/icone16.png",
+		"48" : "images/icone48.png",
+		"128" : "images/icone128.png"
+	},
+	
+"permissions" :
+	[
+			"storage"
+	]
+}

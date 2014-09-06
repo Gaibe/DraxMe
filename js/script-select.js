@@ -46,9 +46,16 @@ function color_it(){
 	content_id.style.color = font_color;
 }
 
+function research_content(){
+	chrome.tabs.executeScript(null, {file: "js/script-tab-content.js"});
+	chrome.tabs.insertCSS(null, {file: "css/active-tab.css"});
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
 	var content_id = document.getElementById("area-content");
+	var interact_id = document.getElementById("interact");
 
 	content_id.addEventListener("dblclick", color_it, false);
+	interact_id.addEventListener("click", research_content, false);
 });

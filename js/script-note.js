@@ -7,6 +7,8 @@ function get_note(){
 function save_note(){
 	var content_id = document.getElementById("area-content");
 	localStorage["draxme-note"] = content_id.value;
+	
+	organize_note();
 }
 
 function delete_note(){
@@ -14,7 +16,17 @@ function delete_note(){
 	location.reload();
 }
 
-
+function organize_note(){
+	var content_id = document.getElementById("area-content");
+	var content = content_id.value;
+	var content_split = content.split("\n");
+	
+	var out="";
+	for (var i in content_split) {
+		out += "<p id='splitted_" + i + "'>" + content_split[i] + "</p>\n";
+    }
+	content = out;
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
